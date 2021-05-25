@@ -18,15 +18,27 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(frase) {
-  arrayStrings = frase.split(' ');
+  let arrayStrings = frase.split(' ');
   return arrayStrings;
 }
 // console.log(splitSentence('Tu te tornas eternamente responsável por aquilo que cativas. (O_Pequeno_Príncipe)'));
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arrayCont) {
+  let primeiroItem;
+  let ultimoItem;
+
+  for (let i = 0; i < arrayCont.length; i += 1) {
+    if (i === 0) {
+      primeiroItem = arrayCont[i];
+    } else if (i === arrayCont.length-1) {
+      ultimoItem = arrayCont[i];
+    }
+  }
+  return ultimoItem + ', ' + primeiroItem;
 }
+// let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
+// console.log(concatName(array));
 
 // Desafio 5
 function footballPoints() {
