@@ -17,9 +17,11 @@ function calcArea(base, height) {
 // console.log(calcArea(51,1));
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(frase) {
+  arrayStrings = frase.split(' ');
+  return arrayStrings;
 }
+// console.log(splitSentence('Tu te tornas eternamente responsável por aquilo que cativas. (O_Pequeno_Príncipe)'));
 
 // Desafio 4
 function concatName() {
