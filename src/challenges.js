@@ -1,10 +1,13 @@
 // Desafio 1
 function compareTrue(valor1, valor2) {
+  let resultado;
+
   if ((valor1 === true) && (valor2 === true)) {
-    return true;
+    resultado = true;
   } else {
-    return false;
+    resultado = false;
   }
+  return resultado;
 }
 // let retorno = compareTrue(true, false);
 // console.log(retorno);
@@ -31,19 +34,29 @@ function concatName(arrayCont) {
   for (let i = 0; i < arrayCont.length; i += 1) {
     if (i === 0) {
       primeiroItem = arrayCont[i];
-    } else if (i === arrayCont.length-1) {
+    } else if (i === arrayCont.length -1) {
       ultimoItem = arrayCont[i];
     }
   }
-  return ultimoItem + ', ' + primeiroItem;
+  let resultado = ultimoItem + ', ' + primeiroItem;
+  return resultado;
 }
 // let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
 // console.log(concatName(array));
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let qtdPontos = 0;
+  let vitoria = 3;
+  let empate = 1;
+
+  vitoria *= wins;
+  empate *= ties;
+  qtdPontos = vitoria + empate;
+
+  return qtdPontos;
 }
+//console.log(footballPoints(14, 8));
 
 // Desafio 6
 function highestCount() {
