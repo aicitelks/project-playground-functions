@@ -1,4 +1,4 @@
-// Desafio 1
+// Desafio 1 [OK]
 function compareTrue(valor1, valor2) {
   let resultado;
 
@@ -12,21 +12,21 @@ function compareTrue(valor1, valor2) {
 // let retorno = compareTrue(true, false);
 // console.log(retorno);
 
-// Desafio 2
+// Desafio 2 [OK]
 function calcArea(base, height) {
   let area = (base * height) / 2;
   return area;
 }
 // console.log(calcArea(51,1));
 
-// Desafio 3
+// Desafio 3 [OK]
 function splitSentence(frase) {
   let arrayStrings = frase.split(' ');
   return arrayStrings;
 }
 // console.log(splitSentence('Tu te tornas eternamente responsável por aquilo que cativas. (O_Pequeno_Príncipe)'));
 
-// Desafio 4
+// Desafio 4 [OK]
 function concatName(arrayCont) {
   let primeiroItem;
   let ultimoItem;
@@ -44,7 +44,7 @@ function concatName(arrayCont) {
  //let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
 // console.log(concatName(array));
 
-// Desafio 5
+// Desafio 5 [OK]
 function footballPoints(wins, ties) {
   let qtdPontos = 0;
   let vitoria = 3;
@@ -58,7 +58,7 @@ function footballPoints(wins, ties) {
 }
 // console.log(footballPoints(14, 8));
 
-// Desafio 6
+// Desafio 6 - NÃO FINALIZADO - REVER
 function highestCount(arrayNumerico) {
   let aux = 0;
   let maiorNum = 0;
@@ -87,16 +87,21 @@ function catAndMouse(mouse, cat1, cat2) {
   let posicaoCat2 = mouse - cat2;
   let retorno = '';
 
-  if (posicaoCat1 > posicaoCat2) {
-    retorno = 'cat1';
-  } else if (posicaoCat1 < posicaoCat2) {
-    retorno = 'cat2';
-  } else if ((cat1 === mouse ) && (cat2 === mouse)) {
+  /** 
+   * Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
+   * Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
+   * A ordem desse código, também é fundamental para obter o resultado correto.
+  */ 
+  if ((Math.abs(posicaoCat1) === mouse) && (Math.abs(posicaoCat2) === mouse)) {
     retorno = 'os gatos trombam e o rato foge';
+  } else if (posicaoCat1 > posicaoCat2) {
+      retorno = 'cat1';
+  } else if (posicaoCat1 < posicaoCat2) {
+      retorno = 'cat2';
   }
   return retorno;
 }
-console.log(catAndMouse(1,0,2));
+console.log(catAndMouse(10,4,22));
 
 // Desafio 8
 function fizzBuzz() {
