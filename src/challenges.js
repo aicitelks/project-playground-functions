@@ -38,10 +38,10 @@ function concatName(arrayCont) {
       ultimoItem = arrayCont[i];
     }
   }
-  let resultado = ultimoItem + ', ' + primeiroItem;
+  let resultado = ultimoItem + `, ` + primeiroItem;
   return resultado;
 }
-// let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
+ //let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
 // console.log(concatName(array));
 
 // Desafio 5
@@ -56,17 +56,47 @@ function footballPoints(wins, ties) {
 
   return qtdPontos;
 }
-//console.log(footballPoints(14, 8));
+// console.log(footballPoints(14, 8));
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(arrayNumerico) {
+  let aux = 0;
+  let maiorNum = 0;
+  let contador = 0;
+
+  for (let i = 0; i < arrayNumerico.length; i += 1) {
+    aux = arrayNumerico[i];
+    for (let i of arrayNumerico) {
+        if (aux < i) {
+            maiorNum = i;
+        }
+    }
+  }
+  return maiorNum;
 }
 
+let arrayNumerico = [0, 9, 4, 1];
+let resultado = highestCount(arrayNumerico);
+console.log(resultado);
+//console.log(highestCount(arrayNumerico));
+
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  // É a distância do gato em relação ao rato
+  let posicaoCat1 = mouse - cat1;
+  let posicaoCat2 = mouse - cat2;
+  let retorno = '';
+
+  if (posicaoCat1 > posicaoCat2) {
+    retorno = 'cat1';
+  } else if (posicaoCat1 < posicaoCat2) {
+    retorno = 'cat2';
+  } else if ((cat1 === mouse ) && (cat2 === mouse)) {
+    retorno = 'os gatos trombam e o rato foge';
+  }
+  return retorno;
 }
+console.log(catAndMouse(1,0,2));
 
 // Desafio 8
 function fizzBuzz() {
