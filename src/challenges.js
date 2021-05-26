@@ -34,14 +34,14 @@ function concatName(arrayCont) {
   for (let i = 0; i < arrayCont.length; i += 1) {
     if (i === 0) {
       primeiroItem = arrayCont[i];
-    } else if (i === arrayCont.length -1) {
+    } else if (i === arrayCont.length - 1) {
       ultimoItem = arrayCont[i];
     }
   }
-  let resultado = ultimoItem + `, ` + primeiroItem;
+  let resultado = ultimoItem + ', ' + primeiroItem;
   return resultado;
 }
- //let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
+// let array = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
 // console.log(concatName(array));
 
 // Desafio 5 [OK]
@@ -66,10 +66,10 @@ function highestCount(arrayNumerico) {
 
   for (let i = 0; i < arrayNumerico.length; i += 1) {
     aux = arrayNumerico[i];
-    for (let i of arrayNumerico) {
-        if (aux < i) {
-            maiorNum = i;
-        }
+    for (let z of arrayNumerico) {
+      if (aux < z) {
+        maiorNum = z;
+      }
     }
   }
   return maiorNum;
@@ -78,30 +78,30 @@ function highestCount(arrayNumerico) {
 let arrayNumerico = [0, 9, 4, 1];
 let resultado = highestCount(arrayNumerico);
 console.log(resultado);
-//console.log(highestCount(arrayNumerico));
+// console.log(highestCount(arrayNumerico));
 
-// Desafio 7
+// Desafio 7 [OK]
 function catAndMouse(mouse, cat1, cat2) {
   // É a distância do gato em relação ao rato
   let posicaoCat1 = mouse - cat1;
   let posicaoCat2 = mouse - cat2;
   let retorno = '';
 
-  /** 
-   * Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
-   * Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
-   * A ordem desse código, também é fundamental para obter o resultado correto.
-  */ 
+/**
+* Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
+* Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
+* A ordem desse código, também é fundamental para obter o resultado correto.
+*/
   if ((Math.abs(posicaoCat1) === mouse) && (Math.abs(posicaoCat2) === mouse)) {
     retorno = 'os gatos trombam e o rato foge';
   } else if (posicaoCat1 > posicaoCat2) {
-      retorno = 'cat1';
+    retorno = 'cat1';
   } else if (posicaoCat1 < posicaoCat2) {
-      retorno = 'cat2';
+    retorno = 'cat2';
   }
   return retorno;
 }
-console.log(catAndMouse(10,4,22));
+console.log(catAndMouse(10, 4, 22));
 
 // Desafio 8
 function fizzBuzz() {
