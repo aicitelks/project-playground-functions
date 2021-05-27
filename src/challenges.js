@@ -68,7 +68,7 @@ function highestCount(arrayNumerico) {
   let maiorNum = Math.max(...arrayNumerico);
   for (i of arrayNumerico) {
     if (maiorNum === i)
-    count += 1;
+      count += 1;
   }
   return count;
 }
@@ -82,11 +82,11 @@ function catAndMouse(mouse, cat1, cat2) {
   let posicaoCat2 = mouse - cat2;
   let retorno = '';
 
-/**
-* Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
-* Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
-* A ordem desse código, também é fundamental para obter o resultado correto.
-*/
+  /**
+  * Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
+  * Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
+  * A ordem desse código, também é fundamental para obter o resultado correto.
+  */
   if ((Math.abs(posicaoCat1) === mouse) && (Math.abs(posicaoCat2) === mouse)) {
     retorno = 'os gatos trombam e o rato foge';
   } else if (posicaoCat1 > posicaoCat2) {
@@ -96,12 +96,42 @@ function catAndMouse(mouse, cat1, cat2) {
   }
   return retorno;
 }
-console.log(catAndMouse(10, 4, 22));
+// console.log(catAndMouse(10, 4, 22));
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(arrayFizzBuzz) {
+  let arrayFizzBuzzStrings = [];
+  let divisaoPor3 = 0;
+  let divisaoPor5 = 0;
+
+  for (i = 0; i < arrayFizzBuzz.length; i += 1) {
+
+    let divisivelPor3e5 = false;
+    divisaoPor3 = (arrayFizzBuzz[i] % 3);
+    divisaoPor5 = (arrayFizzBuzz[i] % 5);
+
+    if ((divisaoPor3 === 0) && (divisaoPor5 === 0)) {
+      arrayFizzBuzzStrings.push('fizzBuzz');
+      divisivelPor3e5 = true;
+    }
+
+    if (divisivelPor3e5 === false) {
+      if (divisaoPor3 === 0) {
+        arrayFizzBuzzStrings.push('fizz');
+      }
+      if (divisaoPor5 === 0) {
+        arrayFizzBuzzStrings.push('buzz');
+      }
+    }
+    
+    if ((divisaoPor3 != 0) && (divisaoPor5 != 0)) {
+      arrayFizzBuzzStrings.push('bug!');
+    }
+  }
+  return arrayFizzBuzzStrings;
 }
+let arrayFizzBuzzNumerico = [2, 15, 7, 9, 45];
+console.log(fizzBuzz(arrayFizzBuzzNumerico));
 
 // Desafio 9
 function encode() {
