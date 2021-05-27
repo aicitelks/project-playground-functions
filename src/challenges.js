@@ -61,18 +61,19 @@ function footballPoints(wins, ties) {
 // Desafio 6 - [OK]
 function highestCount(arrayNumerico) {
   let count = 0;
-  /** 
-   * Source: https://pt.stackoverflow.com/a/287685 
-   * 'max()' é uma função do Math, que aceita vários argumentos. Para ser usada com array é necessário usar o 'spread (...)'
-  */
+/** 
+ * Source: https://pt.stackoverflow.com/a/287685 
+ * 'max()' é uma função do Math, que aceita vários argumentos. Para ser usada com array é necessário usar o 'spread (...)'
+*/
   let maiorNum = Math.max(...arrayNumerico);
-  for (i of arrayNumerico) {
-    if (maiorNum === i)
+  for (let i of arrayNumerico) {
+    if (maiorNum === i) {
       count += 1;
+    }
   }
   return count;
 }
-// let arrayNumerico = [0, 0, 0];
+// let arrayNumerico = [0, 9, 9];
 // console.log(highestCount(arrayNumerico));
 
 // Desafio 7 [OK]
@@ -82,11 +83,12 @@ function catAndMouse(mouse, cat1, cat2) {
   let posicaoCat2 = mouse - cat2;
   let retorno = '';
 
-  /**
-  * Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
-  * Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
-  * A ordem desse código, também é fundamental para obter o resultado correto.
-  */
+/**
+* Com a dica do Laison Gabriel, sobre o Math.abs(), consegui resolver a terceira validação. 
+* Essa função retorna o valor absoluto, ignorando o sinal, assim é possível fazer a comparação de igualdade. 
+* A ordem desse código, também é fundamental para obter o resultado correto.
+*/
+
   if ((Math.abs(posicaoCat1) === mouse) && (Math.abs(posicaoCat2) === mouse)) {
     retorno = 'os gatos trombam e o rato foge';
   } else if (posicaoCat1 > posicaoCat2) {
@@ -98,13 +100,13 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 // console.log(catAndMouse(10, 4, 22));
 
-// Desafio 8
+// Desafio 8 [OK]
 function fizzBuzz(arrayFizzBuzz) {
   let arrayFizzBuzzStrings = [];
   let divisaoPor3 = 0;
   let divisaoPor5 = 0;
 
-  for (i = 0; i < arrayFizzBuzz.length; i += 1) {
+  for (let i = 0; i < arrayFizzBuzz.length; i += 1) {
 
     let divisivelPor3e5 = false;
     divisaoPor3 = (arrayFizzBuzz[i] % 3);
@@ -123,23 +125,41 @@ function fizzBuzz(arrayFizzBuzz) {
         arrayFizzBuzzStrings.push('buzz');
       }
     }
-    
+
     if ((divisaoPor3 != 0) && (divisaoPor5 != 0)) {
       arrayFizzBuzzStrings.push('bug!');
     }
   }
   return arrayFizzBuzzStrings;
 }
-let arrayFizzBuzzNumerico = [2, 15, 7, 9, 45];
-console.log(fizzBuzz(arrayFizzBuzzNumerico));
+// let arrayFizzBuzzNumerico = [2, 15, 7, 9, 45];
+// console.log(fizzBuzz(arrayFizzBuzzNumerico));
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+// Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+function encode(stringCriptografada) {
+  palavra = stringCriptografada.replace(/a/g, 1);
+  palavra = palavra.replace(/e/g, 2);
+  palavra = palavra.replace(/i/g, 3);
+  palavra = palavra.replace(/o/g, 4);
+  palavra = palavra.replace(/u/g, 5);
+  return palavra;
 }
-function decode() {
-  // seu código aqui
+// console.log(encode('a e i o u'));
+
+function decode(stringCriptografada) {
+  palavra = stringCriptografada.replace(/1/g, 'a');
+  palavra = palavra.replace(/2/g, 'e');
+  palavra = palavra.replace(/3/g, 'i');
+  palavra = palavra.replace(/4/g, 'o');
+  palavra = palavra.replace(/5/g, 'u');
+  return palavra;
 }
+// console.log(decode('g4 Tryb2!'));
+
+
+
+
 
 module.exports = {
   calcArea,
