@@ -58,26 +58,21 @@ function footballPoints(wins, ties) {
 }
 // console.log(footballPoints(14, 8));
 
-// Desafio 6 - NÃO FINALIZADO - REVER
+// Desafio 6 - [OK]
 function highestCount(arrayNumerico) {
-  let aux = 0;
-  let maiorNum = 0;
-  let contador = 0;
-
-  for (let i = 0; i < arrayNumerico.length; i += 1) {
-    aux = arrayNumerico[i];
-    for (let z of arrayNumerico) {
-      if (aux < z) {
-        maiorNum = z;
-      }
-    }
+  let count = 0;
+  /** 
+   * Source: https://pt.stackoverflow.com/a/287685 
+   * 'max()' é uma função do Math, que aceita vários argumentos. Para ser usada com array é necessário usar o 'spread (...)'
+  */
+  let maiorNum = Math.max(...arrayNumerico);
+  for (i of arrayNumerico) {
+    if (maiorNum === i)
+    count += 1;
   }
-  return maiorNum;
+  return count;
 }
-
-let arrayNumerico = [0, 9, 4, 1];
-let resultado = highestCount(arrayNumerico);
-console.log(resultado);
+// let arrayNumerico = [0, 0, 0];
 // console.log(highestCount(arrayNumerico));
 
 // Desafio 7 [OK]
