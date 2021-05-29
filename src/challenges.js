@@ -138,6 +138,7 @@ function fizzBuzz(arrayFizzBuzz) {
 // Desafio 9
 // Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 function encode(stringCriptografada) {
+  let palavra = '';
   palavra = stringCriptografada.replace(/a/g, 1);
   palavra = palavra.replace(/e/g, 2);
   palavra = palavra.replace(/i/g, 3);
@@ -148,6 +149,7 @@ function encode(stringCriptografada) {
 // console.log(encode('a e i o u'));
 
 function decode(stringCriptografada) {
+  let palavra = '';
   palavra = stringCriptografada.replace(/1/g, 'a');
   palavra = palavra.replace(/2/g, 'e');
   palavra = palavra.replace(/3/g, 'i');
