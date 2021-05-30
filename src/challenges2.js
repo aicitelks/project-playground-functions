@@ -79,7 +79,7 @@ function generatePhoneNumber(arrayNumerosFone) {
 } // fecha function(generatePhoneNumber)
 
 let numeros = [0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4];
-console.log(generatePhoneNumber(numeros));
+// console.log(generatePhoneNumber(numeros));
 
 
 
@@ -126,16 +126,37 @@ function triangleCheck(lineA, lineB, lineC) {
   }
 }
 
-let lineA = 10;
-let lineB = 14;
-let lineC = 8;
+// let lineA = 10;
+// let lineB = 14;
+// let lineC = 8;
 
-console.log(triangleCheck(lineA, lineB, lineC));
+// console.log(triangleCheck(lineA, lineB, lineC));
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  // A expressão [^0-9] encontrar todos os caracteres que não estejam entre os colchetes
+  // g: para que a pesquisa seja realizada em toda a string, não para no primeiro que encontrar
+  // utilizamos o replace para substituir todos as letras encontradas por nada ('')
+  // feito isso transforma-se tudo em inteiro usando o parseInt
+  let obterNumeros = string.replace(/[^1-9]/g, '');
+  let a = [];
+  let soma = 0;
+
+  for (let i of obterNumeros) {
+    a.push(parseInt(i)); // transforma a string em inteiro e depois armazena no array
+  }
+  for (let i = 0; i < a.length; i++) {
+    soma = soma + a[i];
+  }
+  
+  if (soma === 1) {
+    return '1 copo de água';
+  } else {
+    return soma + ' copos de água';
+  }
 }
+console.log(hydrate('1 cachaça'));
+
 
 module.exports = {
   generatePhoneNumber,
