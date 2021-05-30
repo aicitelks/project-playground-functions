@@ -57,7 +57,11 @@ function generatePhoneNumber(arrayNumerosFone) {
         count = count + 1;
       }
     }
+    if (count < 3) {
+      count = 0;
+    }
   }
+
   // Faz a validação das três condições
   for (let i = 0; i < arrayNumerosFone.length; i += 1) {
     if (arrayNumerosFone[i] > 9) {
@@ -72,16 +76,61 @@ function generatePhoneNumber(arrayNumerosFone) {
   }
   return '(' + arrayNumerosFone[0] + arrayNumerosFone[1] + ') ' + arrayNumerosFone[2] + arrayNumerosFone[3] + arrayNumerosFone[4] + arrayNumerosFone[5] + arrayNumerosFone[6] + '-' + arrayNumerosFone[7] + arrayNumerosFone[8] + arrayNumerosFone[9] + arrayNumerosFone[10];
 
-} //function(generatePhoneNumber)
-let numeros = [5, 2, 8, 1, 5, 3, 7, 2, 8, 9, 0];
+} // fecha function(generatePhoneNumber)
+
+let numeros = [0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4];
 console.log(generatePhoneNumber(numeros));
 
 
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  let somaAB = lineA + lineB;
+  let somaAC = lineA + lineC;
+  let somaBC = lineB + lineC;
+  let subAB = Math.abs(lineA - lineB);
+  let subAC = Math.abs(lineA - lineC);
+  let subBC = Math.abs(lineB - lineC);
+
+  // (lineX > (a+b)) = false
+  if (lineA > somaBC) {
+    return false;
+  }
+  if (lineB > somaAC) {
+    return false;
+  }
+  if (lineC > somaAB) {
+    return false;
+  }
+
+  // (lineX < Math.abs(a-b)) = false
+  if (lineA < subBC) {
+    return false;
+  }
+  if (lineB < subAC) {
+    return false;
+  }
+  if (lineC < subAB) {
+    return false;
+  }
+
+  // ((lineX < (a+b)) && (x > Math.abs(a-b))) = true
+  if ((lineA < somaBC) && (lineA > subBC)) {
+    return true;
+  }
+  if ((lineB < somaAC) && lineB > subAC) {
+    return true;
+  }
+  if ((lineC < somaAB) && (lineC > subAB)) {
+    return true;
+  }
 }
+
+let lineA = 10;
+let lineB = 14;
+let lineC = 8;
+
+console.log(triangleCheck(lineA, lineB, lineC));
 
 // Desafio 13
 function hydrate() {
