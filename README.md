@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do Projeto Playground Functions! 
 
-## Projeto 2 🚀
+### Projeto 2 🚀
 
 **Bloco 04:** Introdução à JavaScript e Lógica de Programação
 
@@ -33,9 +33,8 @@
     * npm install
 
 ---
----
 
-## By **Letícia Castro**
+#### Por **Letícia Castro**
 Para visualizar o meu **Pull Request** aberto no repositório da Trybe e tomar nota da avaliação e dos testes, acesse: [pull/105](https://github.com/tryber/sd-013-b-project-playground-functions/pull/105) 😀
 
 :large_blue_circle: [LinkedIn](https://www.linkedin.com/in/leticiacastro87/)
