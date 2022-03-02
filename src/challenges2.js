@@ -83,7 +83,7 @@ let numeros = [0, 2, 3, 4, 4, 2, 7, 8, 9, 9, 4];
 
 
 
-// Desafio 12
+// Desafio 12 [OK]
 function triangleCheck(lineA, lineB, lineC) {
   let somaAB = lineA + lineB;
   let somaAC = lineA + lineC;
@@ -132,7 +132,7 @@ function triangleCheck(lineA, lineB, lineC) {
 
 // console.log(triangleCheck(lineA, lineB, lineC));
 
-// Desafio 13
+// Desafio 13 [OK]
 function hydrate(string) {
   // A expressão [^0-9] encontrar todos os caracteres que não estejam entre os colchetes
   // g: para que a pesquisa seja realizada em toda a string, não para no primeiro que encontrar
