@@ -4,8 +4,6 @@
 
 **Bloco 04:** Introdução à JavaScript e Lógica de Programação
 
----
-
 ## Habilidades
 
 - Escrever códigos em JavaScript que usam variáveis e tipos primitivos;
@@ -18,8 +16,6 @@
 - Manipular objetos;
 - Utilizar o comando for/in ;
 - Utilizar funções para organizar e estruturar o seu código;
-
----
 
 ## Instruções para entregar seu projeto
 
